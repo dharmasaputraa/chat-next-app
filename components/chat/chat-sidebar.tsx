@@ -50,7 +50,7 @@ export function ChatSidebar({
       <div className="flex items-center justify-between px-4 py-3">
         <div>
           <h2 className="text-sm font-semibold text-foreground">Messages</h2>
-          <p className="text-xs text-muted-foreground">Personal</p>
+          {/* <p className="text-xs text-muted-foreground">Personal</p> */}
         </div>
         <Button variant="ghost" size="icon-sm" className="text-muted-foreground">
           <MessageCirclePlus className="size-4" />
@@ -83,7 +83,7 @@ export function ChatSidebar({
 
       {/* Conversation List */}
       <ScrollArea className="flex-1">
-        <div className="flex flex-col py-1">
+        <div className="flex flex-col gap-1.5 py-2 px-2.5">
           {filteredConversations.length === 0 ? (
             <div className="flex flex-col items-center justify-center gap-2 px-4 py-8">
               <p className="text-sm text-muted-foreground">No conversations found</p>
@@ -99,7 +99,7 @@ export function ChatSidebar({
                   key={conversation.id}
                   onClick={() => onSelectConversation(conversation)}
                   className={cn(
-                    "group flex w-full items-center gap-3 px-3 py-2.5 text-left transition-all duration-150",
+                    "group flex w-full items-center gap-3 rounded-lg px-3 py-2.5 text-left transition-all duration-150",
                     isSelected
                       ? "bg-accent"
                       : "hover:bg-accent/50",
